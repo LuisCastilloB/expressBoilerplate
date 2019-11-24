@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Customers</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <style>
+      body {
+        background: #E0EAFC;
+      }
+
+      .card {
+        margin:15px;
+      }
+    </style>
+</head>
+<body>
+
+ 
+  <div class="container p-4">
+      <h2>Customers:</h2>
+      <a class="btn btn-success"href="/api/v2/customers/new">Add a new Customer</a>
+      <a class="btn btn-primary"href="/api/v2/customers">Get Data for REST Service</a>
+    <div class="row">
+
+    <% if (customers.length > 0) {%>
+    <% customers.forEach(function(customer) { %>
+    <div class="col-md-4">
+      <div class="card">
+            <table>
+                <tr><td>Id:</td><td><%= customer.id %></td></tr>
+                <tr><td>Name:</td><td><%= customer.name %></td></tr>
+                <tr><td>Last Name:</td><td><%= customer.lastname %></td></tr>
+                <tr><td>City:</td><td><%= customer.city %></td></tr>
+                <tr><td>Address:</td><td><%= customer.address %></td></tr>
+                <tr><td>Phone:</td><td><%= customer.phone %></td></tr>
+            </table>
+            <a class="btn btn-danger" href="/api/v2/customers/delete/<%= customer.id %>"> Delete </a>
+      </div>
+    </div>
+    <%})%>
+    <%} else {%>
+    <div class="card card-body text-center">
+      <p>No Customers yet. <a href="/api/v2/customers/new">Add A New One</a></p>
+    </div>
+    <%}%>
+    </div>
+  </div>
+
+</body>
+</html>

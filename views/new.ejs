@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>New Customers</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <style>
+        body {
+            background: #E0EAFC;
+        }
+
+        .card {
+            margin: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container p-4">
+        <form method="POST" target="/new" class="card card-body">
+
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input name="name" type="text" class="form-control" placeholder="Entry a New Name" autofocus required>
+            </div>
+
+            <div class="form-group">
+                <label for="lastname">Last Name</label>
+                <input name="lastname" type="text" class="form-control" placeholder="Last name" autofocus required>
+            </div>
+
+            <div class="form-group">
+                <label for="city">City</label>
+                <input name="city" type="text" class="form-control" placeholder="City" autofocus required>
+            </div>
+
+            <div class="form-group">
+                <label for="address">Address</label>
+                <input name="address" type="text" class="form-control" placeholder="Address" autofocus required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone</label>
+                <input name="phone" type="text" class="form-control" placeholder="Phone" autofocus required>
+            </div>
+
+
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-success">
+                <a class="btn btn-primary" href="/api/v2/customers/list"> Back </a>
+            </div>
+        </form>
+
+    </div>
+
+</body>
+
+</html>

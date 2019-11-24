@@ -7,6 +7,7 @@ import cookieParser from 'cookie-parser';
 import swaggerify from './swagger';
 import l from './logger';
 
+
 const app = new express();
 
 export default class ExpressServer {
@@ -17,6 +18,9 @@ export default class ExpressServer {
     app.use(bodyParser.urlencoded({ extended: true }));
     app.use(cookieParser(process.env.SESSION_SECRET));
     app.use(express.static(`${root}/public`));
+    app.set('views', path.resolve(root, 'views'));
+    app.set('view engine', 'ejs');
+
   }
 
   router(routes) {
